@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "nasalization";
-  src: url("@/fonts/nasalization-rg.otf") format("opentype");
+  src: url("../../public/fonts/nasalization-rg.otf") format("opentype");
 }
 
 @theme {
