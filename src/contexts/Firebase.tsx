@@ -1,6 +1,6 @@
 "use client";
 import { createContext } from "react";
-import { firebaseConfig } from "./config";
+import { firebaseConfig } from "@/config/firebase.config";
 import { FirebaseError, initializeApp } from "firebase/app";
 import { UserCredential } from "@firebase/auth";
 import {

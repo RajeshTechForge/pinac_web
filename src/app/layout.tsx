@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import { Suspense } from "react";
-import { FirebaseProvider } from "@/firebase/firebaseContext";
+import { FirebaseProvider } from "@/contexts/Firebase";
 import "./globals.css";
-
-export const runtime = "edge"; // 'nodejs' | 'edge'
 
 export const metadata: Metadata = {
   title: "Pinac Workspace",
@@ -17,11 +15,11 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <body className="h-full bg-primary">
+      <body>
         <FirebaseProvider>
           <Suspense>{children}</Suspense>
         </FirebaseProvider>

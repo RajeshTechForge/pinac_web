@@ -25,4 +25,3 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
-export const runtime = "edge"; // 'nodejs' | 'edge'

@@ -2,8 +2,8 @@
 import { useState, useContext } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { UserCredential } from "@firebase/auth";
-import { FirebaseContext } from "@/firebase/firebaseContext";
-import Notification from "@/components/common/Notification";
+import { FirebaseContext } from "@/contexts/Firebase";
+import Notification from "@/components/shared/Notification";
 
 // icons
 import { RiContactsLine } from "react-icons/ri";
@@ -216,4 +216,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-export const runtime = "edge"; // 'nodejs' | 'edge'

@@ -2,8 +2,8 @@
 import { useState, useContext } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { UserCredential } from "@firebase/auth";
-import { FirebaseContext } from "@/firebase/firebaseContext";
-import Notification from "@/components/common/Notification";
+import { FirebaseContext } from "@/contexts/Firebase";
+import Notification from "@/components/shared/Notification";
 import Link from "next/link";
 
 // icons
@@ -187,4 +187,3 @@ const SignInPage = () => {
 };
 
 export default SignInPage;
-export const runtime = "edge"; // 'nodejs' | 'edge'
