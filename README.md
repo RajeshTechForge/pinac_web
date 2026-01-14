@@ -13,68 +13,31 @@
 
 Building the Website for featuring PINAC Workspace
 
-![](https://skillicons.dev/icons?i=nextjs,typescript,firebase)
+![](https://skillicons.dev/icons?i=vite,react,typescript,firebase)
 
 </div>
-
-## 🎨 UI Design
-
-The UI design for the project is crafted with a focus on simplicity and elegance, ensuring a seamless user experience.
-
-<img src="https://github.com/RajeshTechForge/pinac_web/blob/main/assets/screenshot.png" alt="website screenshot">
-
-## 📂 File Structure
-
-      .
-      ├─] .env.local (ignored)
-      ├── public/
-      │   ├── fonts/
-      │   └── img/
-      └── src/
-          ├── app/
-          │   ├── auth/
-          │   │   ├── sign-in/
-          │   │   └── sign-up/
-          │   │
-          │   ├── components/
-          │   │   ├── home/
-          │   │   │   ├── AppPreview.tsx
-          │   │   │   ├── FeatureSection.tsx
-          │   │   │   ├── HeroSection.tsx
-          │   │   │   ├── Navbar.tsx
-          │   │   │   ├── ParticlesBackground.tsx
-          │   │   │   └── PricingSection.tsx
-          │   │   └── shared/
-          │   │       ├── Footer.tsx
-          │   │       └── Notification.tsx
-          │   │
-          │   ├── globals.css
-          │   ├── layout.tsx
-          │   ├── page.tsx
-          │   └── [...not_found]/
-          │
-          ├── config/
-          │   └── firebase.config.ts
-          └── contexts/
-              └── Firebase.tsx
 
 ## 🚀 Getting Started
 
 1. Clone the Repository
 
    ```bash
-   git clone https://github.com/RajeshTechForge/pinac_web.git && cd pinac_web
+   git clone https://github.com/RajeshTechForge/pinac_web.git
+   cd pinac_web
+
    ```
 
 2. Install Node dependencies
 
    ```bash
    npm install
+
    ```
 
 3. Start the App
    ```bash
    npm run dev
+
    ```
 
 ## 🎉 Contributing
@@ -91,4 +54,4 @@ We highly welcome contributions! Please follow the steps if you're interested.
 
 ## 📄 License
 
-PINAC Web is licensed under the **MIT License**. See the <a href="https://github.com/RajeshTechForge/pinac_web/blob/main/LICENSE">LICENSE</a> file for more details.
+PINAC Web is licensed under the **MIT License**. See the <a href="LICENSE">LICENSE</a> file for more details.
