@@ -80,7 +80,7 @@ const SignUpPage = () => {
         const userCredential = await firebase.signUpWithEmail(
           name,
           email,
-          password
+          password,
         );
         showNotification("Account created successfully!", "success");
         setTimeout(() => handleAuthFlow(userCredential), 1500);
@@ -102,7 +102,7 @@ const SignUpPage = () => {
 
   //
   const handleGoogleSignUp = async (
-    event: React.MouseEvent<HTMLButtonElement>
+    event: React.MouseEvent<HTMLButtonElement>,
   ) => {
     event.preventDefault();
     try {
@@ -118,8 +118,13 @@ const SignUpPage = () => {
 
   // =========================================== //
   return (
-    <main>
-      <section className="h-lvh flex justify-center items-center bg-primary">
+    <main className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden selection:bg-violet-500/30">
+      {/* Ambient background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-900/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-900/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+      <section className="relative z-10 w-full max-w-md p-6">
         {notification.show && (
           <Notification
             message={notification.message}
@@ -129,81 +134,120 @@ const SignUpPage = () => {
             }
           />
         )}
-        <form className="flex flex-col p-8 w-[400px] rounded-2xl bg-form shadow-glass">
-          {/*        Input Fields       */}
-          {/* ========================= */}
-          <div className="mx-0.5 my-4 font-Poppins font-medium text-base text-light">
-            <label>Name </label>
+
+        <div className="text-center mb-8 relative">
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-violet-600 to-cyan-400 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(139,92,246,0.3)]">
+            <span className="text-white font-bold text-2xl tracking-tighter">
+              P
+            </span>
           </div>
-          <div className="h-12 pl-2.5 rounded-lg flex items-center shadow-glass focus-within:shadow-none focus-within:border-1.5 focus-within:border-highlight">
-            <RiContactsLine size={25} color="#ececec" />
-            <input
-              type="text"
-              value={name}
-              className="h-full w-10/12 ml-2.5 rounded-lg text-light bg-form"
-              placeholder="Enter your Name"
-              onChange={(event) => setName(event.target.value)}
-            />
-          </div>
-          <div className="mx-0.5 my-4 font-Poppins font-medium text-base text-light">
-            <label>Email </label>
-          </div>
-          <div className="h-12 pl-2.5 rounded-lg flex items-center shadow-glass focus-within:shadow-none focus-within:border-1.5 focus-within:border-highlight">
-            <MdAlternateEmail size={25} color="#ececec" />
-            <input
-              type="email"
-              value={email}
-              className="h-full w-10/12 ml-2.5 rounded-lg text-light bg-form"
-              placeholder="Enter your Email"
-              onChange={(event) => setEmail(event.target.value)}
-            />
+          <h1 className="text-3xl font-bold text-white tracking-tight mb-2">
+            Create an account
+          </h1>
+          <p className="text-neutral-400 font-light">
+            Join PINAC workspace today
+          </p>
+        </div>
+
+        <form className="flex flex-col p-8 rounded-3xl bg-neutral-900/50 backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+          {/* Name */}
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-neutral-300 mb-2">
+              Name
+            </label>
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <RiContactsLine
+                  className="text-neutral-500 group-focus-within:text-violet-400 transition-colors"
+                  size={20}
+                />
+              </div>
+              <input
+                type="text"
+                value={name}
+                className="w-full pl-12 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all font-light"
+                placeholder="Enter your name"
+                onChange={(event) => setName(event.target.value)}
+              />
+            </div>
           </div>
 
-          <div className="mx-0.5 my-4 font-Poppins font-medium text-base text-light">
-            <label>Password </label>
+          {/* Email */}
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-neutral-300 mb-2">
+              Email
+            </label>
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <MdAlternateEmail
+                  className="text-neutral-500 group-focus-within:text-violet-400 transition-colors"
+                  size={20}
+                />
+              </div>
+              <input
+                type="email"
+                value={email}
+                className="w-full pl-12 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all font-light"
+                placeholder="Enter your email"
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
           </div>
-          <div className="h-12 pl-2.5 rounded-lg flex items-center shadow-glass focus-within:shadow-none focus-within:border-1.5 focus-within:border-highlight">
-            <IoLockClosedOutline size={25} color="#ececec" />
-            <input
-              type="password"
-              value={password}
-              className="h-full w-10/12 ml-2.5 rounded-lg text-light bg-form"
-              placeholder="Enter your Password"
-              onChange={(event) => setPassword(event.target.value)}
-            />
+
+          {/* Password */}
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-neutral-300 mb-2">
+              Password
+            </label>
+            <div className="relative group">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <IoLockClosedOutline
+                  className="text-neutral-500 group-focus-within:text-violet-400 transition-colors"
+                  size={20}
+                />
+              </div>
+              <input
+                type="password"
+                value={password}
+                className="w-full pl-12 pr-4 py-3 bg-black/50 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all font-light"
+                placeholder="Enter your password"
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </div>
           </div>
-          {/*        SignUp Button        */}
-          {/* =========================== */}
+
+          {/* SignUp Button */}
           <button
-            className="h-12 w-full mt-5 mb-2.5 rounded-lg font-medium text-base text-light bg-LoginButton cursor-pointer hover:bg-LoginButtonHover"
+            className="w-full py-3 px-4 bg-white text-black font-semibold rounded-xl hover:bg-neutral-200 active:scale-[0.98] transition-all mb-6 relative group overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.1)]"
             onClick={handleSignUp}
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             Sign Up
           </button>
-          {/*          or Divider        */}
-          {/* ========================== */}
-          <div className="flex justify-between items-center text-base text-light gap-x-2.5">
-            <span className="block h-px w-full bg-[#dbdbdb]"></span>
-            <span>or</span>
-            <span className="block h-px w-full bg-[#dbdbdb]"></span>
+
+          {/* Divider */}
+          <div className="flex items-center text-sm text-neutral-500 mb-6">
+            <div className="flex-1 h-px bg-white/10"></div>
+            <span className="px-4 font-light">or connect with</span>
+            <div className="flex-1 h-px bg-white/10"></div>
           </div>
-          {/*        Google SignUp Button       */}
-          {/* ================================ */}
-          <div className="flex items-center justify-between gap-2.5">
-            <button
-              className="h-12 w-full mt-2.5 flex items-center justify-center rounded-lg font-medium gap-2.5 bg-light cursor-pointer"
-              onClick={handleGoogleSignUp}
-            >
-              <FcGoogle size={25} />
-              Sign In with Google
-            </button>
-          </div>
-          {/*        Login Page Link        */}
-          {/* ============================= */}
-          <p className="my-1 text-center text-sm text-light">
-            Already have a account?{" "}
+
+          {/* Google log in Button */}
+          <button
+            className="w-full py-3 px-4 flex items-center justify-center gap-3 bg-transparent border border-white/10 text-white font-medium rounded-xl hover:bg-white/5 active:scale-[0.98] transition-all"
+            onClick={handleGoogleSignUp}
+          >
+            <FcGoogle size={22} />
+            Google
+          </button>
+
+          {/* Login Page Link */}
+          <p className="mt-8 text-center text-sm text-neutral-400">
+            Already have an account?{" "}
             <span
-              className="ml-1 no-underline text-blue-500 text-sm font-medium cursor-pointer"
+              className="text-violet-400 hover:text-violet-300 font-medium transition-colors cursor-pointer"
               onClick={handleLoginClick}
             >
               Login

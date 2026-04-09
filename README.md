@@ -27,9 +27,11 @@ Building the Website for featuring PINAC Workspace
 
    ```
 
-2. Install Node dependencies
+2. Install dependencies
 
    ```bash
+   cp .env.example .env
+
    npm install
 
    ```
