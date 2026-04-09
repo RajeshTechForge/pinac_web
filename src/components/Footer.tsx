@@ -1,4 +1,5 @@
 import { FiGithub } from "react-icons/fi";
+import LogoImage from "@/assets/image/logo.svg";
 
 export default function Footer() {
   const scrollTo = (id: string) => {
@@ -13,14 +14,12 @@ export default function Footer() {
       <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
         <div className="flex items-center gap-2">
           <div
-            className="w-6 h-6 rounded bg-gradient-to-tr from-violet-600 to-cyan-400 flex items-center justify-center"
+            className="w-8 rounded-full border-2 border-white/35 overflow-hidden cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <span className="text-white font-bold text-xs tracking-tighter">
-              P
-            </span>
+            <img src={LogoImage} alt="Logo" className="fill" />
           </div>
-          <span className="text-white font-bold tracking-tight text-lg">
+          <span className="text-white font-nasa font-bold tracking-wider text-lg">
             PINAC
           </span>
           <span className="text-neutral-600 font-mono text-xs ml-2">

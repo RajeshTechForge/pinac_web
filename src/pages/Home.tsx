@@ -5,7 +5,6 @@ import HowItWorksSection from "../components/HowItWorksSection";
 import PrivacySection from "../components/PrivacySection";
 import OpenSourceSection from "../components/OpenSourceSection";
 import TechStackSection from "../components/TechStackSection";
-import CTASection from "../components/CTASection";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
       <PrivacySection />
       <OpenSourceSection />
       <TechStackSection />
-      <CTASection />
       <Footer />
     </main>
   );

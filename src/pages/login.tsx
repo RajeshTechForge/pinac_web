@@ -122,11 +122,6 @@ const SignInPage = () => {
         )}
 
         <div className="text-center mb-8 relative">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-violet-600 to-cyan-400 flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(139,92,246,0.3)]">
-            <span className="text-white font-bold text-2xl tracking-tighter">
-              P
-            </span>
-          </div>
           <h1 className="text-3xl font-bold text-white tracking-tight mb-2">
             Welcome back
           </h1>

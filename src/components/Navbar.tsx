@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiGithub } from "react-icons/fi";
+import LogoImage from "@/assets/image/logo.svg";
 
 export default function Navbar() {
   const scrollTo = (id: string) => {
@@ -16,12 +17,10 @@ export default function Navbar() {
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-violet-600 to-cyan-400 flex items-center justify-center">
-            <span className="text-white font-bold text-lg tracking-tighter">
-              P
-            </span>
+          <div className="w-10 rounded-full border-2 border-white/35 overflow-hidden">
+            <img src={LogoImage} alt="Logo" className="fill" />
           </div>
-          <span className="text-white font-bold tracking-tight text-xl">
+          <span className="text-white font-nasa font-bold tracking-wider text-2xl">
             PINAC
           </span>
         </div>
